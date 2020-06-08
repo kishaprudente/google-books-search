@@ -8,6 +8,7 @@ function Nav() {
         Google Books
       </a>
         <Link style={styles.link} to="/search">Search</Link>
+        <Link style={styles.link} to="/saved">Saved</Link>
     </nav>
   );
 }
@@ -16,6 +17,7 @@ export default Nav;
 
 const styles = {
   link: {
-    color: "white"
+    color: "white",
+    padding: "5px",
   }
 }
