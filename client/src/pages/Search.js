@@ -19,6 +19,7 @@ const Search = () => {
 		API.getBooks(searchBook)
 			.then((res) => {
 				setBooks(res.data.items);
+				console.log(res.data.items);
 			})
 			.catch((err) => console.log(err));
 	};
@@ -32,10 +33,7 @@ const Search = () => {
 
 	return (
 		<Container>
-			<Jumbotron>
-				<h1>(React) Google Books Search</h1>
-				<p>Search for and Save Books of Interest</p>
-			</Jumbotron>
+			<Jumbotron />
 			<Row>
 				<Container fluid>
 					<h3>Boook Search</h3>
@@ -47,14 +45,17 @@ const Search = () => {
 				</Container>
 			</Row>
 			<Row>
-				<Container fluid>
+				<Container>
 					{books.length ? (
-						<div className="row row-cols-3">
+						<div
+							className="row row-cols-3"
+							style={{ justifyContent: "center" }}
+						>
 							{books.map((book) => {
 								return (
 									<div
 										key={book.id}
-										className="card col-12 col-sm-3"
+										className="card col-sm-3"
 										style={{ margin: "5px" }}
 									>
 										<img
