@@ -19,7 +19,6 @@ const Search = () => {
 		API.getBooks(searchBook)
 			.then((res) => {
 				setBooks(res.data.items);
-				console.log(res.data.items);
 			})
 			.catch((err) => console.log(err));
 	};
@@ -36,7 +35,7 @@ const Search = () => {
 			<Jumbotron />
 			<Row>
 				<Container fluid>
-					<h3>Boook Search</h3>
+					<h3>Book Search</h3>
 					<Input
 						placeholder="Search Google Books"
 						onChange={handleInputChange}
