@@ -15,13 +15,13 @@ const Saved = () => {
         }
     }
 
-    useEffect( () => {
+    useEffect(() => {
         loadSavedBooks();
     }, [books]);
 
-    const handleDeleteBook = (id) => {
+    const handleDeleteBook = async (id) => {
         try {
-            API.deleteBook(id)
+            await API.deleteBook(id)
             const savedBooks = books.filter(book => book.id !== id);
             setBooks(savedBooks);
         } catch (err) {
